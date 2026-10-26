@@ -1,0 +1,36 @@
+[project]
+name = "research-assistant-langgraph"
+version = "0.1.0"
+description = "Multi-agent Bangladesh legal research assistant built with LangGraph."
+readme = "README.md"
+authors = [
+    { name = "shahin5646", email = "shahinsmnok99@gmail.com" }
+]
+requires-python = ">=3.11"
+dependencies = [
+    "httpx>=0.28.1",
+    "langchain>=1.4.7",
+    "langchain-openai>=1.7.2",
+    "langchain-tavily>=0.2.18",
+    "langgraph>=1.2.16",
+    "langgraph-cli[inmem]>=0.4.37",
+    "python-dotenv>=1.2.4",
+    "tenacity>=9.2.1",
+]
+
+[tool.uv]
+package = false
+
+[dependency-groups]
+dev = [
+    "pytest>=9.1.1",
+    "ruff>=0.17.1",
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
